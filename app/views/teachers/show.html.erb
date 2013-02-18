@@ -1,0 +1,7 @@
+<%= @teacher.name %>, <%= @teacher.email %>
+<% @teacher.classrooms.each do |classroom| %>
+<br>
+  Name: <%= classroom.name %>
+<br>
+  Number: <%= classroom.number %>
+<% end %>

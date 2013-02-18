@@ -1,0 +1,7 @@
+<% if @teacher.errors.any? %>
+  The form contains <%= pluralize(@teacher.errors.count, "error") %>
+
+    <% @teacher.errors.full_messages.each do |msg| %>
+      <li> <%= msg %></li>
+    <% end %>
+<% end %>
