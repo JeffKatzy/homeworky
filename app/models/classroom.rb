@@ -15,7 +15,11 @@ class Classroom < ActiveRecord::Base
   before_create :assign_unique_number
   belongs_to :teacher
 
+  has_many :designations
   has_many :students, through: :designations
+
+  has_many :assignments
+  has_many :lessons, through: :assignments
 
   def self.numbers
     Classroom.all.collect{ |classroom| classroom.number }
@@ -36,5 +40,9 @@ class Classroom < ActiveRecord::Base
     reassign_if_repeat
     reassign_if_repeat #FIX THIS - should be able to
     #implement with a WHILE loop in the reassign if repeat function
+  end
+
+  def assign_lesson(lesson)
+    assignments << lesson
   end
 end

@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: lessons
+#
+#  id          :integer          not null, primary key
+#  teacher_id  :integer
+#  question_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  teacher_id: 1
+  question: MyText
+  answer: MyString
+
+two:
+  teacher_id: 1
+  question: MyText
+  answer: MyString
